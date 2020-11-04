@@ -147,8 +147,8 @@ console.log (hungryDog(1, 15.1));
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
 // Rock, Paper, Scissors - Let's play against the computer!
-/*
-Create a global variable that randomly generates the computer's choice
+
+/* Create a global variable that randomly generates the computer's choice
 Use Math.random to determine the computers choice (Math.random gives a random number between 0 and 1)
 
 Use the game function below to do the following:
@@ -163,10 +163,32 @@ Use the game function below to do the following:
   HINT: While you can complete this with only conditionals based on strings, it may help to equate choice to a number when using Math.random()
 */
 
-function game(user, computer){
-    /*add your code here*/
+
+let compChoice = Math.random();
+
+function compLogic (comp){
+  if (comp > 0 && comp <= 0.33){
+    return "rock"
+  } else if (comp > 0.33 && comp <= 0.66){
+    return "paper"
+  } else {
+    return "scissors"
+  }
 }
-  
+  console.log("The computer chose " + compLogic(compChoice) + ".");
+  let userChoice = prompt("Rock, Paper, or Scissors?");
+
+function game (user, computer){
+  if (user == "rock" && computer == "paper" || user == "paper" && computer == "scissors" || user == "scissors" && computer == "rock"){
+    return "You lose!"
+  } else if (user == "rock" && computer == "scissors" || user == "paper" && computer == "rock" || user == "scissors" && computer == "paper"){
+    return "You win!"
+  } else if (user == computer) {
+    return "It's a tie."
+  } 
+}
+
+console.log(game(userChoice, compLogic(compChoice)));
   
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 5 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
@@ -180,9 +202,11 @@ Using the miles function below do the following:
   3. Return the number of miles
 */
 
-function miles(/*add your code here*/){
-    /*add your code here*/
-  }
+function miles(kilometers){
+  return kilometers * 0.621;
+}
+
+console.log (miles(5));
 
 
 
@@ -194,11 +218,11 @@ Using the feet function below do the following:
   3. Return number of feet
 */
 
-function feet(/*add your code here*/){
-    /*add your code here*/
-  }
- 
+function feet(centimeter){
+  return centimeter * 0.394;
+}
 
+console.log (feet(200));
 
 /*🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀*/
 
